@@ -13,7 +13,8 @@ public class CombatManager : MonoBehaviour
 
     CombatStates _currentState;
 
-    public Camera CombatCam;
+    private Camera _battleCam;
+    private Camera _thirdPersonCam;
     #endregion
 
     #region Properties
@@ -23,6 +24,10 @@ public class CombatManager : MonoBehaviour
     private void Start()
     {
         _currentState = CombatStates.Selection;
+        _battleCam = GameObject.FindGameObjectWithTag("BattleCamera").GetComponent<Camera>();
+        _thirdPersonCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
+        //_thirdPersonCam.enabled = false;
+        //_battleCam.enabled = true;
     }
 
     private void Update()
