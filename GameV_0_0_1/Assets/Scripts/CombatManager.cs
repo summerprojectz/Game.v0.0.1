@@ -26,8 +26,8 @@ public class CombatManager : MonoBehaviour
         _currentState = CombatStates.Selection;
         _battleCam = GameObject.FindGameObjectWithTag("BattleCamera").GetComponent<Camera>();
         _thirdPersonCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
-        //_thirdPersonCam.enabled = false;
-        //_battleCam.enabled = true;
+        _thirdPersonCam.enabled = false;
+        _battleCam.enabled = true;
     }
 
     private void Update()
