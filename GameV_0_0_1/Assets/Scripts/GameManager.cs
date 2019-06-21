@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (_activateCombat == false)
+        if(_activateCombat == false)
         {
             CheckForCombat();
         }
