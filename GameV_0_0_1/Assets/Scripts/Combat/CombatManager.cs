@@ -18,6 +18,11 @@ public class CombatManager : MonoBehaviour
     #endregion
 
     #region Properties
+    public CombatStates CurrentState
+    {
+        get { return _currentState; }
+        set { _currentState = value; }
+    }
     #endregion
 
     #region Methods
@@ -28,6 +33,7 @@ public class CombatManager : MonoBehaviour
         _thirdPersonCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         _thirdPersonCam.enabled = false;
         _battleCam.enabled = true;
+        
     }
 
     private void Update()

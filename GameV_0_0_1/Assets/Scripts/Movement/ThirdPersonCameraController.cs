@@ -8,6 +8,10 @@ public class ThirdPersonCameraController : MonoBehaviour
     public float rotationSpeed = 1;
     public Transform Target, Player;
     float mouseX, mouseY;
+    GameManager _gameManager;
+
+    [SerializeField]
+    ThirdPersonCharacterController _controller;
     #endregion
 
     #region Properties
@@ -18,6 +22,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     {
         Cursor.visible = false;
         Cursor.lockState = CursorLockMode.Locked;
+        _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     private void LateUpdate()
@@ -27,14 +32,26 @@ public class ThirdPersonCameraController : MonoBehaviour
 
     void CamControl()
     {
-        mouseX += Input.GetAxis("Mouse X") * rotationSpeed;
-        mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed;
-        mouseY = Mathf.Clamp(mouseY, -35, 60);
+        if (_gameManager.ActivateCombat == false)
+        {
 
-        transform.LookAt(Target);
+            mouseX += Input.GetAxis("Mouse X") * rotationSpeed;
+            mouseY -= Input.GetAxis("Mouse Y") * rotationSpeed;
+            mouseY = Mathf.Clamp(mouseY, -35, 60);
 
-        Target.rotation = Quaternion.Euler(mouseY, mouseX, 0);
-        Player.rotation = Quaternion.Euler(0, mouseX, 0);
+            transform.LookAt(Target);
+
+
+            if (Input.GetKey(KeyCode.LeftShift) || (_controller.Ver == 0 && _controller.Hor == 0))
+            {
+                Target.rotation = Quaternion.Euler(mouseY, mouseX, 0);
+            }
+            else
+            {
+                Target.rotation = Quaternion.Euler(mouseY, mouseX, 0);
+                Player.rotation = Quaternion.Euler(0, mouseX, 0);
+            }
+        }
     }
     #endregion
 }

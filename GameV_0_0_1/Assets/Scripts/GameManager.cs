@@ -16,6 +16,10 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region Properties
+    public bool ActivateCombat
+    {
+        get { return _activateCombat; }
+    }
     #endregion
 
     #region Methods
