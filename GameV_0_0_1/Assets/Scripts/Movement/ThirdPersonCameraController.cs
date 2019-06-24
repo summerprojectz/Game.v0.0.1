@@ -20,8 +20,7 @@ public class ThirdPersonCameraController : MonoBehaviour
     #region Methods
     private void Start()
     {
-        Cursor.visible = false;
-        Cursor.lockState = CursorLockMode.Locked;
+        HideMouse();
         _gameManager = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
@@ -52,6 +51,12 @@ public class ThirdPersonCameraController : MonoBehaviour
                 Player.rotation = Quaternion.Euler(0, mouseX, 0);
             }
         }
+    }
+
+    public void HideMouse()
+    {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
     }
     #endregion
 }

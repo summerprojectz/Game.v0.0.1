@@ -33,7 +33,9 @@ public class CombatManager : MonoBehaviour
         _thirdPersonCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         _thirdPersonCam.enabled = false;
         _battleCam.enabled = true;
-        
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
+
     }
 
     private void Update()
