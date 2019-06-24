@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6766467678466526563}
   - component: {fileID: 2250355972443953288}
+  - component: {fileID: 645219807698854625}
   m_Layer: 0
   m_Name: CombatManager
   m_TagString: Untagged
@@ -43,7 +44,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d8b7ead9db2a9d84199933002620f21b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _battleCam: {fileID: 1525615654772493141, guid: 0a58528e7abaab640b79f56a7eed5db1,
-    type: 3}
-  _thirdPersonCam: {fileID: 3308512928995569691, guid: 3d4de622484f0684d92ed16a5a182d54,
-    type: 3}
+--- !u!114 &645219807698854625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6539880870945280186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bfe279b99bb65d48ad8d6d60b043ef1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
