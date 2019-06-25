@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.AI;
 
 public class CombatManager : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class CombatManager : MonoBehaviour
 
     private Camera _battleCam;
     private Camera _thirdPersonCam;
+    private NavMeshAgent _player;
+
     [SerializeField]
     private GameObject _combatInterface;
     #endregion
@@ -39,6 +42,7 @@ public class CombatManager : MonoBehaviour
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
         Instantiate(_combatInterface);
+        _player = GameObject.FindGameObjectWithTag("Player").GetComponent<NavMeshAgent>();
     }
 
     private void Update()
