@@ -119,7 +119,7 @@ NavMeshSettings:
     accuratePlacement: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 0}
+  m_NavMeshData: {fileID: 23800000, guid: 38cfa3d68ab890d408a15c1d38ae9a7c, type: 2}
 --- !u!1001 &83807918
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -823,6 +823,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Floor
+      objectReference: {fileID: 0}
+    - target: {fileID: 1447515161848967701, guid: ff2606840507c194fae6337da3d4e47f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 2030239484284308092, guid: ff2606840507c194fae6337da3d4e47f,
         type: 3}
