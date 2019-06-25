@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CombatManager : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class CombatManager : MonoBehaviour
 
     private Camera _battleCam;
     private Camera _thirdPersonCam;
+    [SerializeField]
+    private GameObject _combatInterface;
     #endregion
 
     #region Properties
@@ -35,7 +38,7 @@ public class CombatManager : MonoBehaviour
         _battleCam.enabled = true;
         Cursor.visible = true;
         Cursor.lockState = CursorLockMode.None;
-
+        Instantiate(_combatInterface);
     }
 
     private void Update()
@@ -47,6 +50,12 @@ public class CombatManager : MonoBehaviour
             case CombatStates.Move:
                 break;
         }
+    }
+
+    public void EndTurn()
+    {
+        _currentState = CombatStates.Move;
+        Debug.Log("Turn Over");
     }
     #endregion
 }
